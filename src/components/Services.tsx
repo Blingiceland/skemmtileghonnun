@@ -52,10 +52,10 @@ const services = [
             "Bókunarkerfi sérstaklega hannað fyrir karókíherbergi. Gestir velja herbergi, tímalengd og fjölda — allt rafrænt. Lágmarkar símtöl og gerir reksturinn auðveldari.",
     },
     {
-        icon: "☁️",
-        title: "Ódýr hýsing",
+        icon: "✏️",
+        title: "Þú stjórnar efninu",
         description:
-            "Við notum nútíma hýsingarlausnir þar sem flest verkefni eru án mánaðarlegs hýsingarkostnaðar. Þú borgar fyrir vefinn — ekki reikninginn á hverjum mánuði.",
+            "Enginn WordPress, ekkert flókið kerfi. Við gefum þér einfaldan bakenda þar sem þú uppfærir dagskrá, matseðil og myndir sjálfur/sjálf — án tækniþekkingar.",
     },
 ];
 
