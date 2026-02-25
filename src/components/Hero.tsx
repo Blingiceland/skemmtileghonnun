@@ -186,9 +186,8 @@ export default function Hero() {
                     }}
                 >
                     {[
-                        { value: "3+", label: "Verkefni" },
                         { value: "100%", label: "Sérhannaðar síður" },
-                        { value: "24klst", label: "Svar á fyrirspurnum" },
+                        { value: "24klst", label: "Verðtilboð" },
                     ].map((stat) => (
                         <div key={stat.label}>
                             <div

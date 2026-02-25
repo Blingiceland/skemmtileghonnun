@@ -39,6 +39,18 @@ const services = [
         description:
             "Við sjáum um allt — uppfærslur, breytingar og tæknilegan stuðning.",
     },
+    {
+        icon: "🍽️",
+        title: "Borðabókunarkerfi",
+        description:
+            "Sérsniðið borðabókunarkerfi beint á síðuna þína. Gestir geta pantað borð á netinu, valið tíma og fjölda. Þú stjórnar öllu í einni einfaldri yfirlitssíðu.",
+    },
+    {
+        icon: "🎤",
+        title: "Karókíherbergi",
+        description:
+            "Bókunarkerfi sérstaklega hannað fyrir karókíherbergi. Gestir velja herbergi, tímalengd og fjölda — allt rafrænt. Lágmarkar símtöl og gerir reksturinn auðveldari.",
+    },
 ];
 
 function ServiceCard({

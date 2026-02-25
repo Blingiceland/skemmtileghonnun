@@ -307,7 +307,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                 </div>
 
                 {/* CTA */}
-                {project.status === "live" && project.url && (
+                {project.url && (
                     <a
                         href={project.url}
                         target="_blank"
