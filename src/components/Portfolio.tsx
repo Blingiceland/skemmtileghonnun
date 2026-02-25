@@ -22,13 +22,13 @@ const projects: Project[] = [
         color: "#10b981",
     },
     {
-        name: "Pablo Tequila Bar",
+        name: "Pablo Discobar",
         description:
-            "Glæsileg síða fyrir tekílubar með kokteilaseðli, stemmningu og næturaðgangi. Hönnuð til þess að laða að gesti.",
-        url: "https://pablo-web-kappa.vercel.app",
+            "Tapas og kokteilar á líflegum stað í hjarta Reykjavíkur. Litrík hönnun og þægilegt bókunarkerfi.",
+        url: "https://pablodiscobar.is/",
         status: "live",
-        tags: ["Kokteilar", "Matseðill", "Næturstemming"],
-        color: "#f59e0b",
+        tags: ["Kokteilar", "Tapas", "Stemmning"],
+        color: "#ec4899",
     },
     {
         name: "Macondo",
@@ -182,8 +182,8 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                                 : "rgba(139, 92, 246, 0.15)",
                         color: project.status === "live" ? "#10b981" : "#8b5cf6",
                         border: `1px solid ${project.status === "live"
-                                ? "rgba(16, 185, 129, 0.25)"
-                                : "rgba(139, 92, 246, 0.25)"
+                            ? "rgba(16, 185, 129, 0.25)"
+                            : "rgba(139, 92, 246, 0.25)"
                             }`,
                     }}
                 >
