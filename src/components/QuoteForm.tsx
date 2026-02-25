@@ -199,7 +199,7 @@ export default function QuoteForm() {
                         className="section-subtitle"
                         style={{ textAlign: "center", margin: "0 auto" }}
                     >
-                        Fylltu út formið og við sendum þér verðtilboð strax og hægt er
+                        Fáðu verðtilboð innan 24 tíma — án skuldbindingar
                     </p>
                 </div>
 
