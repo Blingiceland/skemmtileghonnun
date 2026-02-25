@@ -116,7 +116,7 @@ export default function Hero() {
                     }}
                 >
                     <span style={{ fontSize: "0.7rem" }}>●</span>
-                    Fagleg heimasíðugerð fyrir veitingastaði
+                    Fagleg heimasíðugerð fyrir veitingastaði, bara og skemmtistaði
                 </div>
 
                 {/* Heading */}

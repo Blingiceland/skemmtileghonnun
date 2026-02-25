@@ -25,7 +25,7 @@ const services = [
         icon: "📅",
         title: "Bókunarkerfi",
         description:
-            "Innbyggt bókunarkerfi þar sem gestir geta pantað borð eða viðburði á netinu.",
+            "Sérsniðið bókunarkerfi — borðapantanir, tímasetningar og séróskir. Gestir bóka á netinu, þú stjórnar öllu í einni einfaldri yfirlitssíðu.",
     },
     {
         icon: "⚡",
@@ -40,16 +40,22 @@ const services = [
             "Við sjáum um allt — uppfærslur, breytingar og tæknilegan stuðning.",
     },
     {
-        icon: "🍽️",
-        title: "Borðabókunarkerfi",
+        icon: "🏠",
+        title: "Sala og hópaleiga",
         description:
-            "Sérsniðið borðabókunarkerfi beint á síðuna þína. Gestir geta pantað borð á netinu, valið tíma og fjölda. Þú stjórnar öllu í einni einfaldri yfirlitssíðu.",
+            "Bókunarkerfi fyrir einkasal, fundarsali og hópaleigur. Viðskiptavinir velja rými, tíma og fjölda gesta — allt rafrænt og án símtala.",
     },
     {
         icon: "🎤",
         title: "Karókíherbergi",
         description:
             "Bókunarkerfi sérstaklega hannað fyrir karókíherbergi. Gestir velja herbergi, tímalengd og fjölda — allt rafrænt. Lágmarkar símtöl og gerir reksturinn auðveldari.",
+    },
+    {
+        icon: "☁️",
+        title: "Ódýr hýsing",
+        description:
+            "Við notum nútíma hýsingarlausnir þar sem flest verkefni eru án mánaðarlegs hýsingarkostnaðar. Þú borgar fyrir vefinn — ekki reikninginn á hverjum mánuði.",
     },
 ];
 
