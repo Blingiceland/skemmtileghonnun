@@ -6,12 +6,13 @@ interface Project {
     name: string;
     description: string;
     url: string;
-    status: "live" | "development";
+    status: "live" | "development" | "demo";
     tags: string[];
     color: string;
+    emoji?: string;
 }
 
-const projects: Project[] = [
+const liveProjects: Project[] = [
     {
         name: "Dillon",
         description:
@@ -38,6 +39,69 @@ const projects: Project[] = [
         status: "development",
         tags: ["Í vinnslu", "Bráðum tilbúið"],
         color: "#8b5cf6",
+    },
+];
+
+const demoProjects: Project[] = [
+    {
+        name: "Café Paris",
+        description:
+            "Glæsileg fine dining upplifun í Parísaranda. Dökkt og lúxus þema með gullna áherslu, bókunarkerfi og fullt matseðilsyfirlit.",
+        url: "https://finedining-demo.vercel.app",
+        status: "demo",
+        tags: ["Fine Dining", "Bókanir", "Lúxus"],
+        color: "#f59e0b",
+        emoji: "🥂",
+    },
+    {
+        name: "SÓDÓMA",
+        description:
+            "Næturklúbbur með ótrúlega cyberpunk-neon lúkk. Tónlistaruppskrá, VIP bókunarkerfi og ótrúlegar liftanir á milli flóra.",
+        url: "https://sodoma-demo.vercel.app",
+        status: "demo",
+        tags: ["Næturklúbbur", "VIP", "Neon"],
+        color: "#a855f7",
+        emoji: "⚡",
+    },
+    {
+        name: "Morgunbrauð",
+        description:
+            "Hlý og kósý bakari- og kaffihússsíða. Ljóst, organískt þema með handskrifuðum leturgerðum og fallegum matseðli.",
+        url: "https://bakarisdemo.vercel.app",
+        status: "demo",
+        tags: ["Bakarí", "Kaffihús", "Organískt"],
+        color: "#d97706",
+        emoji: "🥐",
+    },
+    {
+        name: "Heilagur Patrekur",
+        description:
+            "Írskur pöbbur með dökkt-grænni stemmningu, írsku kaffimatseðli, trúbador-tónlist og bókunarkerfi fyrir pílu og pool.",
+        url: "https://patrekur-demo.vercel.app",
+        status: "demo",
+        tags: ["Pöbbur", "Tónlist", "Írskur"],
+        color: "#22c55e",
+        emoji: "🍀",
+    },
+    {
+        name: "Seagal's Aikido Grill",
+        description:
+            "Kvikmyndakennd fast-food síða með martial arts-anda. Svartur og rauður, dramtísk matarljósmyndun og skemmtilegur matseðill.",
+        url: "https://seagal-demo.vercel.app",
+        status: "demo",
+        tags: ["Fast Food", "Cinematic", "Action"],
+        color: "#ef4444",
+        emoji: "🥋",
+    },
+    {
+        name: "HOLLYWOOD Reykjavík",
+        description:
+            "Íslenska stórviðburðastaðurinn. 2000 manns, þrír venue-modes, lúxus gull-þema, fyrirtækjabókun og interaktív staðsetningaryfirlit.",
+        url: "https://hollywood-demo.vercel.app",
+        status: "demo",
+        tags: ["Viðburðastaður", "Lúxus", "2000 manns"],
+        color: "#d4af37",
+        emoji: "🌟",
     },
 ];
 
@@ -86,7 +150,8 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                     borderBottom: `1px solid var(--border-subtle)`,
                 }}
             >
-                {project.status === "live" && project.url ? (
+                {/* Also show demo projects with iframe if url is set */}
+                {(project.status === "live" || project.status === "demo") && project.url ? (
                     <>
                         <iframe
                             src={project.url}
@@ -179,15 +244,19 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                         background:
                             project.status === "live"
                                 ? "rgba(16, 185, 129, 0.15)"
-                                : "rgba(139, 92, 246, 0.15)",
-                        color: project.status === "live" ? "#10b981" : "#8b5cf6",
+                                : project.status === "demo"
+                                    ? "rgba(245, 158, 11, 0.15)"
+                                    : "rgba(139, 92, 246, 0.15)",
+                        color: project.status === "live" ? "#10b981" : project.status === "demo" ? "#f59e0b" : "#8b5cf6",
                         border: `1px solid ${project.status === "live"
                             ? "rgba(16, 185, 129, 0.25)"
-                            : "rgba(139, 92, 246, 0.25)"
+                            : project.status === "demo"
+                                ? "rgba(245, 158, 11, 0.25)"
+                                : "rgba(139, 92, 246, 0.25)"
                             }`,
                     }}
                 >
-                    {project.status === "live" ? "● Live" : "◌ Í vinnslu"}
+                    {project.status === "live" ? "● Live" : project.status === "demo" ? "◆ Demo" : "◌ Í vinnslu"}
                 </div>
             </div>
 
@@ -320,17 +389,51 @@ export default function Portfolio() {
                     </p>
                 </div>
 
-                {/* Projects Grid */}
-                <div
-                    style={{
-                        display: "grid",
-                        gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))",
-                        gap: "24px",
-                    }}
-                >
-                    {projects.map((project, i) => (
-                        <ProjectCard key={project.name} project={project} index={i} />
-                    ))}
+                {/* ── LIVE CLIENT SITES ── */}
+                <div style={{ marginBottom: "80px" }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "32px" }}>
+                        <div style={{ flex: 1, height: "1px", background: "var(--border-subtle)" }} />
+                        <span style={{ fontFamily: "var(--font-heading)", fontSize: "0.8rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.15em", color: "#10b981" }}>
+                            ● Viðskiptavinir
+                        </span>
+                        <div style={{ flex: 1, height: "1px", background: "var(--border-subtle)" }} />
+                    </div>
+                    <div
+                        style={{
+                            display: "grid",
+                            gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))",
+                            gap: "24px",
+                        }}
+                    >
+                        {liveProjects.map((project, i) => (
+                            <ProjectCard key={project.name} project={project} index={i} />
+                        ))}
+                    </div>
+                </div>
+
+                {/* ── DEMO SHOWCASE SITES ── */}
+                <div>
+                    <div style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "32px" }}>
+                        <div style={{ flex: 1, height: "1px", background: "var(--border-subtle)" }} />
+                        <span style={{ fontFamily: "var(--font-heading)", fontSize: "0.8rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.15em", color: "#f59e0b" }}>
+                            ◆ Sýniverkefni
+                        </span>
+                        <div style={{ flex: 1, height: "1px", background: "var(--border-subtle)" }} />
+                    </div>
+                    <p style={{ color: "var(--text-muted)", fontSize: "0.9rem", marginBottom: "32px", textAlign: "center" }}>
+                        Sérsniðin gerfiverkefni sem sýna hvað við getum gert — mismunandi stílar, iðnaðar og upplifanir.
+                    </p>
+                    <div
+                        style={{
+                            display: "grid",
+                            gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))",
+                            gap: "24px",
+                        }}
+                    >
+                        {demoProjects.map((project, i) => (
+                            <ProjectCard key={project.name} project={project} index={i} />
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>
